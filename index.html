@@ -1,26 +1,147 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
 
-        <link rel="stylesheet" href="../../assets/style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
 
-    <body>
-        <div class="frame">
-            <h1 class="flame_title">画面に文章を表示しよう</h1>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
 
-            <div class="flame_inner">
-                <script>
-                    document.write('I\'m Japanese');
-                </script>
-                <script>
-                    document.write('JavaScript Study');
-                    // 警告ウィンドウを表示する
-                    alert('ご注意ください\nOKボタンをクリックしてください');
-                </script>
-            </div>
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <!-- <div id="time"></div> -->
+            <script>
+
+
+              // let answer = prompt('1から10の範囲で個数を入力してください');
+              // if (answer >= 1 && answer <= 10) {
+              //   document.write('正しく入力されました');
+              // } else {
+              //   document.write('1から10の範囲で入力してください');
+              // }
+
+              // for (let day=1; day<=365; day++) {
+              //   document.write(day + '<br>');
+              // }
+
+              // const week = ['日', '月', '火', '水', '木', '金', '土'];
+              // let today = new Date();
+              //
+              // let week_jp = week[today.getDay()];
+              // document.write(`今日は、${week_jp}曜日です`);
+
+              // const words = {
+              //   'Apple': 'リンゴ',
+              //   'Orange': 'オレンジ',
+              //   'Grapes': 'グレープ'
+              // }
+              //
+              // let q = prompt('英単語を入力してください');
+              // if (words[q]) {
+              //   document.write(`${q}の日本語訳は${words[q]}です`);
+              // } else {
+              //   document.write('その単語は登録されていません');
+              // }
+
+              // const book = '吾輩は猫である。何でも暗いジメジメしたところで泣いていたことだけは記憶している。';
+              //
+              // let keyword = prompt('検索したい文字は？');
+              // let pos = book.indexOf(keyword);
+              // if (pos >= 0) {
+              //   document.write(`<p>${book}</p>`);
+              //   document.write(`<p>${keyword}は、${pos}文字目に見つかりました</p>`);
+              // } else {
+              //   document.write('見つかりませんでした');
+              // }
+
+              // const cnt = parseInt(prompt('160円の商品をいくつ購入しますか?'));
+
+              // if (Number.isFinite(cnt)) {
+              //   document.write(`${cnt * 160}円です`);
+              // } else {
+              //   document.write('数字で入力してください');
+              // }
+              // if (Number.isFinite(cnt)) {
+              //   alert(`${cnt * 160}円です`);
+              // } else {
+              //   alert('数字で入力してください');
+              // }
+
+              // const price = parseInt(prompt('商品の金額を入力してください'));
+              // const tax = 10;
+              //
+              // if (Number.isFinite(price)) {
+              //   let tax_price = Math.round(price * (tax / 100));
+              //   document.write(`${price}円の消費税(${tax}%)は、${tax_price}円です`);
+              // } else {
+              //   alert('数字で入力してください');
+              // }
+
+              // const q1 = Math.floor(Math.random() * 10);
+              // const q2 = Math.floor(Math.random() * 10);
+              //
+              // let answer = parseInt(prompt(`${q1}+${q2}=?`));
+              // if (q1 + q2 === answer) {
+              //   document.write ('正解です');
+              // } else {
+              //   document.write ('はずれです');
+              // }
+
+              // let num = parseInt(prompt('数字を入力してください'));
+              //
+              // if (num % 2 === 0) {
+              //   document.write('偶数です');
+              // } else {
+              //   document.write('奇数です');
+              // }
+
+              // const getTax = (price, tax=10) => {
+              //   return Math.round(price * (tax / 100));
+              // }
+              //
+              // let tax = getTax(1980, 10);
+              // document.write(tax);
+
+              class Item {
+                constructor(price) {
+                  this.tax = 10;
+                  if (isFinite(price)) {
+                    this.price = price;
+                  } else {
+                    this.price = 0;
+                  }
+                }
+
+                getTax() {
+                  return Math.round(this.price * (this.tax / 100));
+                }
+              }
+
+              const price = parseInt(prompt('商品の金額を入力してください'));
+              const item = new Item(price);
+
+              let tax = item.getTax();
+
+              if (tax) {
+                document.write(`${price}円の消費税は、${tax}円です`);
+              } else {
+                document.write('数字を入力してください')
+              }
+
+
+
+
+
+
+            </script>
+
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
